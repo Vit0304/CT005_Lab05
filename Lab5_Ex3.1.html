@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Infographic và video YouTube</title>
-  <meta name="description" content="Khám phá infographic Lab 05 và xem video hướng dẫn được nhúng trực tiếp từ YouTube.">
+  <title>Hồ sơ cá nhân | Lab 05</title>
+  <meta name="description" content="Trang giới thiệu cá nhân với hồ sơ học tập, tài liệu PDF, infographic và video YouTube.">
   <style>
     :root {
       --ink: #17212b;
@@ -35,9 +35,27 @@
       padding: 56px 0 72px;
     }
 
+    .topline {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 46px;
+      color: var(--muted);
+      font-family: Arial, sans-serif;
+      font-size: 0.8rem;
+    }
+
+    .topline strong {
+      color: var(--ink);
+      font-size: 0.9rem;
+    }
+
     header {
-      max-width: 760px;
-      margin-bottom: 36px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 230px;
+      gap: 48px;
+      align-items: end;
+      margin-bottom: 52px;
     }
 
     .eyebrow {
@@ -52,7 +70,7 @@
 
     h1 {
       margin: 0;
-      font-size: clamp(2.2rem, 6vw, 4.8rem);
+      font-size: clamp(2.2rem, 6vw, 4.5rem);
       line-height: 0.98;
       letter-spacing: -0.04em;
     }
@@ -66,11 +84,56 @@
       line-height: 1.65;
     }
 
+    .profile-facts {
+      display: grid;
+      gap: 14px;
+      padding: 0 0 4px 20px;
+      border-left: 2px solid var(--accent);
+      font-family: Arial, sans-serif;
+    }
+
+    .profile-facts div {
+      display: grid;
+      gap: 4px;
+    }
+
+    .profile-facts dt {
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .profile-facts dd {
+      margin: 0;
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      margin: 0 0 18px;
+    }
+
+    .section-title h2 {
+      font-size: 1.5rem;
+    }
+
+    .section-title p {
+      margin: 0;
+      color: var(--muted);
+      font-family: Arial, sans-serif;
+      font-size: 0.84rem;
+    }
+
     .content {
       display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-      gap: 24px;
-      align-items: start;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      align-items: stretch;
     }
 
     .panel {
@@ -105,6 +168,14 @@
       background: #f0eee9;
     }
 
+    .pdf-frame {
+      display: block;
+      width: 100%;
+      height: 280px;
+      border: 0;
+      background: #f0eee9;
+    }
+
     .video-frame {
       position: relative;
       aspect-ratio: 16 / 9;
@@ -132,8 +203,19 @@
       font-weight: 700;
     }
 
+    .product-link {
+      display: inline-block;
+      margin: 0 24px 20px;
+      color: var(--accent-dark);
+      font-family: Arial, sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
     footer {
       margin-top: 28px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
       color: var(--muted);
       font-family: Arial, sans-serif;
       font-size: 0.8rem;
@@ -142,6 +224,20 @@
     @media (max-width: 760px) {
       .page {
         padding-top: 36px;
+      }
+
+      .topline {
+        margin-bottom: 36px;
+      }
+
+      header {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        margin-bottom: 38px;
+      }
+
+      .profile-facts {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       .content {
@@ -155,30 +251,88 @@
       .video-note {
         padding: 14px 20px 18px;
       }
+
+      .product-link {
+        margin-right: 20px;
+        margin-left: 20px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .topline span:last-child {
+        display: none;
+      }
+
+      .section-title {
+        align-items: start;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .profile-facts {
+        grid-template-columns: 1fr;
+      }
+
     }
   </style>
 </head>
 <body>
   <main class="page">
+    <div class="topline">
+      <strong>HỒ SƠ CÁ NHÂN</strong>
+      <span>CT005 · LAB 05</span>
+    </div>
+
     <header>
-      <p class="eyebrow">Lab 05 · Multimedia</p>
-      <h1>Infographic và Video YouTube</h1>
-      <p class="intro">Khám phá infographic Lab 05 và xem video hướng dẫn được nhúng trực tiếp từ YouTube.</p>
+      <div>
+        <p class="eyebrow">Xin chào, mình là</p>
+        <h1>Võ Anh Hào</h1>
+        <p class="intro">Mình là sinh viên ngành Kỹ thuật phần mềm, yêu thích khám phá công nghệ và sáng tạo nội dung số. Đây là một vài sản phẩm mình thực hiện trong học phần CT005.</p>
+      </div>
+      <dl class="profile-facts">
+        <div>
+          <dt>Chuyên ngành</dt>
+          <dd>Kỹ thuật phần mềm</dd>
+        </div>
+        <div>
+          <dt>Mã số sinh viên</dt>
+          <dd>B2604641</dd>
+        </div>
+        <div>
+          <dt>Học phần</dt>
+          <dd>CT005 · Lab 05</dd>
+        </div>
+      </dl>
     </header>
 
-    <section class="content" aria-label="Nội dung đa phương tiện">
+    <section aria-labelledby="products-title">
+      <div class="section-title">
+        <h2 id="products-title">Sản phẩm của mình</h2>
+        <p>Tài liệu · Thiết kế · Video</p>
+      </div>
+      <div class="content">
       <article class="panel">
         <div class="panel-heading">
+          <h2>Tài liệu PDF</h2>
+          <p>Bài thực hành Lab 05 · Ex 1.2</p>
+        </div>
+        <iframe class="pdf-frame" src="Lab05_Ex1.2.pdf#toolbar=0&amp;navpanes=0&amp;view=FitH" title="Xem trước tài liệu PDF bài thực hành Lab 05"></iframe>
+        <a class="product-link" href="Lab05_Ex1.2.pdf" target="_blank" rel="noopener noreferrer">Mở toàn bộ tài liệu PDF</a>
+      </article>
+
+      <article class="panel" aria-label="Infographic Lab 05">
+        <div class="panel-heading">
           <h2>Infographic</h2>
-          <p>Hình ảnh minh họa của bài thực hành</p>
+          <p>Thiết kế thông tin · Ex 2.1</p>
         </div>
         <img class="infographic" src="Lab05_Ex2.1.png" alt="Infographic của bài thực hành Lab 05">
+        <a class="product-link" href="Lab05_Ex2.1.png" target="_blank" rel="noopener noreferrer">Xem ảnh kích thước đầy đủ</a>
       </article>
 
       <article class="panel">
         <div class="panel-heading">
           <h2>Video YouTube</h2>
-          <p>Nội dung video được nhúng trực tiếp trên trang</p>
+          <p>Video được nhúng trực tiếp trên trang</p>
         </div>
         <div class="video-frame">
           <iframe
@@ -191,9 +345,10 @@
         </div>
         <p class="video-note">Để phát video nhúng, hãy mở trang qua HTTP (ví dụ: dùng tiện ích Live Server trong VS Code), không mở trực tiếp tệp bằng <code>file://</code>. Nếu vẫn không xem được, <a href="https://youtube.com/shorts/J00ImwCMxok?feature=share" target="_blank" rel="noopener noreferrer">mở video trên YouTube</a>.</p>
       </article>
+      </div>
     </section>
 
-    <footer>© 2026 Lab05 · Infographic thuộc chủ sở hữu tương ứng; video được nhúng từ YouTube.</footer>
+    <footer>© 2026 · Trang giới thiệu cá nhân · CT005 Lab 05</footer>
   </main>
 </body>
 </html>

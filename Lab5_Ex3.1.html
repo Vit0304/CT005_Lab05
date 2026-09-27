@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infographic và video YouTube</title>
+  <meta name="description" content="Khám phá infographic Lab 05 và xem video hướng dẫn được nhúng trực tiếp từ YouTube.">
+  <style>
+    :root {
+      --ink: #17212b;
+      --muted: #607080;
+      --paper: #f7f5ef;
+      --surface: #ffffff;
+      --accent: #e4572e;
+      --accent-dark: #b73c1e;
+      --line: #e7e1d7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% 10%, rgba(228, 87, 46, 0.12), transparent 26rem),
+        var(--paper);
+      font-family: Georgia, 'Times New Roman', serif;
+    }
+
+    .page {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 56px 0 72px;
+    }
+
+    header {
+      max-width: 760px;
+      margin-bottom: 36px;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--accent);
+      font-family: Arial, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.2rem, 6vw, 4.8rem);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+    }
+
+    .intro {
+      max-width: 600px;
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-family: Arial, sans-serif;
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .panel {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      box-shadow: 0 16px 40px rgba(40, 34, 25, 0.08);
+    }
+
+    .panel-heading {
+      padding: 22px 24px 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 1.45rem;
+    }
+
+    .panel-heading p {
+      margin: 7px 0 0;
+      color: var(--muted);
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+    }
+
+    .infographic {
+      display: block;
+      width: 100%;
+      height: auto;
+      background: #f0eee9;
+    }
+
+    .video-frame {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      background: #151515;
+    }
+
+    .video-frame iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .video-note {
+      margin: 0;
+      padding: 16px 24px 22px;
+      color: var(--muted);
+      font-family: Arial, sans-serif;
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+
+    .video-note a {
+      color: var(--accent-dark);
+      font-weight: 700;
+    }
+
+    footer {
+      margin-top: 28px;
+      color: var(--muted);
+      font-family: Arial, sans-serif;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 760px) {
+      .page {
+        padding-top: 36px;
+      }
+
+      .content {
+        grid-template-columns: 1fr;
+      }
+
+      .panel-heading {
+        padding: 18px 20px 15px;
+      }
+
+      .video-note {
+        padding: 14px 20px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <p class="eyebrow">Lab 05 · Multimedia</p>
+      <h1>Infographic và Video YouTube</h1>
+      <p class="intro">Khám phá infographic Lab 05 và xem video hướng dẫn được nhúng trực tiếp từ YouTube.</p>
+    </header>
+
+    <section class="content" aria-label="Nội dung đa phương tiện">
+      <article class="panel">
+        <div class="panel-heading">
+          <h2>Infographic</h2>
+          <p>Hình ảnh minh họa của bài thực hành</p>
+        </div>
+        <img class="infographic" src="Lab05_Ex2.1.png" alt="Infographic của bài thực hành Lab 05">
+      </article>
+
+      <article class="panel">
+        <div class="panel-heading">
+          <h2>Video YouTube</h2>
+          <p>Nội dung video được nhúng trực tiếp trên trang</p>
+        </div>
+        <div class="video-frame">
+          <iframe
+            src="https://www.youtube.com/embed/J00ImwCMxok"
+            title="Video YouTube của bài thực hành"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <p class="video-note">Để phát video nhúng, hãy mở trang qua HTTP (ví dụ: dùng tiện ích Live Server trong VS Code), không mở trực tiếp tệp bằng <code>file://</code>. Nếu vẫn không xem được, <a href="https://youtube.com/shorts/J00ImwCMxok?feature=share" target="_blank" rel="noopener noreferrer">mở video trên YouTube</a>.</p>
+      </article>
+    </section>
+
+    <footer>© 2026 Lab05 · Infographic thuộc chủ sở hữu tương ứng; video được nhúng từ YouTube.</footer>
+  </main>
+</body>
+</html>
